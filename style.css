@@ -14,6 +14,10 @@ header h1 {
     vertical-align: middle;
 }
 
+button {
+    display: block;
+}
+
 form {
     margin: 4em 0;
 }
