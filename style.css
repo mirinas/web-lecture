@@ -53,6 +53,29 @@ header {
 }
 
 
+
+.error {
+    color: red;
+    background: pink;
+    border: 1px solid;
+    padding: 0.5em;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.success {
+    color: green;
+    background: lightgreen;
+    border: 1px solid;
+    padding: 0.5em;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+
+
+
 @media (max-width: 600px) {
     header a {
         display: block;

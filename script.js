@@ -18,18 +18,42 @@ function removeStyle() {
 }
 
 
+function displayNotification(className, message) {
+    let notification = document.querySelector('#notification');
+    notification.style.display = 'inline-block';
+    notification.className = className;
+    notification.innerHTML = message;
+}
+
+
 function addTodoItem() {
     // perskaityti reiksme is input laukelio
     let input = document.querySelector('#new-item');
+    let list = document.querySelector('#todo-list');
 
+    if(!input.value) {
+        displayNotification('error', 'New item cannot be empty!');
+        return;
+    }
+
+    if(input.value.length > 50) {
+        displayNotification('error', 'Character count cannot exceed 50 characters!')
+        return;
+    }
+
+    if(list.childElementCount >= 5) {
+        displayNotification('error', 'No more items can fit to this list!')
+        return;
+    }
+        
     // sukonstruoti nauja saraso eilute <li>
     let li = '<li>' + input.value + '</li>';
 
     // ideti nauja eilute i sarasa
-    let list = document.querySelector('#todo-list');
     list.innerHTML = list.innerHTML + li;
-
+    
     // istrinti ivesties laukelio reiksme
     input.value = '';
+    displayNotification('success', 'Item added!');
 }
 
