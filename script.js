@@ -26,6 +26,17 @@ function displayNotification(className, message) {
 }
 
 
+
+addEventListener('keydown', e => {
+    if(e.key != 'Enter') return;
+
+    let input = document.querySelector('#new-item');
+    if(input != document.activeElement) return;
+
+    addTodoItem();
+})
+
+
 function addTodoItem() {
     // perskaityti reiksme is input laukelio
     let input = document.querySelector('#new-item');
